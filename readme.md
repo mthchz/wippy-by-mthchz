@@ -1,9 +1,11 @@
 # Wippy by mthchz
 Version customisée du script d'automatisation de l'installation et configuration de Wordpress par [@maximebj](https://twitter.com/maximebj)
+
 *Ce srcrip est utilisé sous MAC OSX El captain, non testé sous Windows.*
 
 ## Pré-requis
 Installez WP-CLI : [http://wp-cli.org/](http://wp-cli.org/)
+
 Testez la bonne installation en tapant *wp* dans le terminal.
 
 ## Documentation WP-CLI
@@ -11,7 +13,9 @@ Testez la bonne installation en tapant *wp* dans le terminal.
 
 ## Avec MAMP
 Pour les utilisateurs de MAMP, il faut faire une petite modification du fichier .bash_profile et/ou .profile, simplement en suivant les instructions de [ce topic Stackoverflow](http://stackoverflow.com/questions/4145667/how-to-override-the-path-of-php-to-use-the-mamp-path/10653443#10653443)
+
 La varibale *MAMP_PHP*, doit **ABSOLUMENT être placé avant la varibale ${PATH}** et/ou toutes les autres déclarations de cette variable (sinon ça marche pas, le système va chercher la version PHP sytème et non celle de MAMP).
+
 Pensez à modifier la version PHP dans le chemin de la librairie php par celle de MAMP (/Applications/MAMP/bin/php/**phpx.x.x**/bin). Pour la connaitre, dans MAMP, Settings > PHP.
 
 Pour vérifier la version de PHP utilisée par le système :
