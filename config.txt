@@ -1,0 +1,5 @@
+email="admin_username@domaine.fr"
+admin="admin_username"
+password="admin_mot_de_passe"
+dbuser="root"
+dbpass="root"

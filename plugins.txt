@@ -1,0 +1,11 @@
+contact-form-7
+db-cache-reloaded-fix
+regenerate-thumbnails
+display-widgets
+wp-pagenavi
+redirection
+tinymce-clear-buttons
+advanced-custom-fields
+ewww-image-optimizer
+responsive-lightbox
+simple-page-ordering
