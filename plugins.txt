@@ -9,3 +9,4 @@ advanced-custom-fields
 ewww-image-optimizer
 responsive-lightbox
 simple-page-ordering
+widget-css-classes
