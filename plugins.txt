@@ -10,3 +10,7 @@ ewww-image-optimizer
 responsive-lightbox
 simple-page-ordering
 widget-css-classes
+post-thumbnail-editor
+siteorigin-panels
+so-widgets-bundle
+wp-sanitize-file-name-plus
