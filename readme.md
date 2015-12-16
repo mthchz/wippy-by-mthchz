@@ -3,6 +3,22 @@ Version customisée du script d'automatisation de l'installation et configuratio
 
 *Ce srcrip est utilisé sous MAC OSX El captain, non testé sous Windows.*
 
+## Basic
+```
+cd /path/to/wippy
+```
+```
+bash wippy.sh <repertoire du site> <url du site> <Nom du site>
+```
+* **Repertoire du site :** chemin complet pour l'installation du site *(ex : /Users/mthchz/Sites/2015/monNouveauWordpress)*. Pour pas se tromper dans le chemin, glissez le dossier dans le terminal puis ajouter le nom du repertoire pour le site. Ne pas créer le repertoire monNouveauWordpress, il lsera créé par Wippy.
+* **Url du site :** URL complete utilisée pour le site *(ex : http://localhost:8888/2015/monNouveauWordpress ou http://wp.client.2015 si vous utilisez des sous-domaines)*
+* **Nom du site :** Le nom du site, qui sera ajouté au paramètre WP, à mettre entre quotes.
+  
+## Aide
+```
+bash wippy.sh help
+```
+
 ## Pré-requis
 Installez WP-CLI : [http://wp-cli.org/](http://wp-cli.org/)
 
