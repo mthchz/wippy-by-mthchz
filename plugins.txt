@@ -1,5 +1,4 @@
 contact-form-7
-db-cache-reloaded-fix
 regenerate-thumbnails
 display-widgets
 wp-pagenavi
@@ -14,3 +13,4 @@ post-thumbnail-editor
 siteorigin-panels
 so-widgets-bundle
 wp-sanitize-file-name-plus
+post-type-archive-links
