@@ -165,11 +165,22 @@ bot "Je télécharge le thème Paperplane (Proximit Agency starter theme) :"
 cd wp-content/themes/ # On se place dans wp-content/themes
 git clone https://github.com/mthchz/paperplane.git
 wp theme activate paperplane
+# Supression du repo
+cd ./paperplane
+rm -rf .git
+rm .gitignore
 
 # Download mu-plugin from git repository
 bot "Je télécharge le MU plugin de configuration de base"
-cd .. # On remonte dans wp-content
+cd ../.. # On remonte dans wp-content
 git clone https://github.com/mthchz/mu-plugins.git
+# Supression du repo
+cd ./mu-plugins
+rm -rf .git
+rm .gitignore
+
+# On retourne à la racine du WP
+cd ../../
 
 # Create standard pages
 bot "Je crée les pages habituelles (Accueil, blog, contact...)"
