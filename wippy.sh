@@ -177,7 +177,6 @@ git clone https://github.com/mthchz/mu-plugins.git
 # Supression du repo
 cd ./mu-plugins
 rm -rf .git
-rm .gitignore
 
 # On retourne à la racine du WP
 cd ../../
