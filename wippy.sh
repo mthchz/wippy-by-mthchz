@@ -34,7 +34,7 @@ pluginfilepath="$(pwd)/plugins.txt"
 # not mandatory at all
 
 # Stop on error
-set -e
+#set -e
 
 # colorize and formatting command line
 # You need iTerm and activate 256 color mode in order to work : http://kevin.colyar.net/wp-content/uploads/2011/01/Preferences.jpg
@@ -100,16 +100,14 @@ fi
 bot "${blue}${bold}Bonjour ! Je suis Wippy.${normal}"
 echo -e "         Je vais installer WordPress pour votre site : ${cyan}$2${normal}"
 
-# On regarde si le repertoire n'existe pas
-if [ -d ".$sitedir" ]; then
-  echo "${red}Le dossier ${cyan}$1${red}existe déjà${normal}."
-  echo "         Par sécurité, je ne vais pas plus loin pour ne rien écraser."
-  exit 1 # quit script
-fi
-
 # Création du repertoire
-bot "Je crée le dossier : ${cyan}$sitedir${normal}"
-mkdir $sitedir
+# On regarde si le repertoire n'existe pas
+if [ -d "$sitedir" ]; then
+  echo "${red}Le dossier ${cyan}$1${red}existe déjà${normal}."
+else
+  bot "Je crée le dossier : ${cyan}$sitedir${normal}"
+  mkdir $sitedir
+fi
 
 # On s'y rend
 bot "Je me place dans le dossier créé..."
@@ -149,7 +147,7 @@ wp db create
 
 # launch install
 bot "et j'installe !"
-wp core install --url=$url --title="$sitename" --admin_user=$admin --admin_email=$email --admin_password=$password
+wp core install --url="$url" --title="$sitename" --admin_user="$admin" --admin_email="$email" --admin_password="$password"
 
 # Plugins install
 bot "J'installe les plugins à partir de la liste des plugins :"
@@ -161,7 +159,7 @@ do
 done < $pluginfilepath
 
 # Download theme from git repository
-bot "Je télécharge le thème Paperplane (Proximit Agency starter theme) :"
+bot "Je télécharge le thème Paperplane :"
 cd wp-content/themes/ # On se place dans wp-content/themes
 git clone https://github.com/mthchz/paperplane.git
 wp theme activate paperplane
@@ -210,7 +208,7 @@ bot "Je crée le menu principal, assigne les pages, et je lie l'emplacement du t
 wp menu create "mainmenu"
 wp menu item add-post mainmenu 3
 wp menu item add-post mainmenu 4
-wp menu item add-post mainmenu 5
+#wp menu item add-post mainmenu 5
 wp menu location assign mainmenu header-menu
 
 # Misc cleanup
@@ -218,11 +216,12 @@ bot "Je supprime Hello Dolly, les thèmes de base, les articles exemples et les 
 wp post delete 1 --force # Article exemple - no trash. Comment is also deleted
 wp post delete 2 --force # page exemple
 wp plugin delete hello
+wp plugin delete akismet
 wp theme delete twentyfifteen
-wp theme delete twentythirteen
-wp theme delete twentyfourteen
+wp theme delete twentyseventeen
+wp theme delete twentysixteen
 wp widget delete search-2 recent-posts-2 recent-comments-2 archives-2 categories-2 meta-2
-wp option update blogdescription ''
+wp option update blogdescription 'Un site utilisant WP'
 
 # TODO : Not working (Warning: Regenerating a .htaccess file requires special configuration. See usage docs.)
 # Permalinks to /%postname%/
@@ -252,7 +251,7 @@ echo "URL du site:   $user"
 echo "Login admin :  $admin"
 echo -e "Password :  ${cyan}${bold} $password ${normal}${normal}"
 line
-echo -e "${grey}(N'oubliez pas le mot de passe ! Je l'ai copié dans le presse-papier)${normal}"
+#echo -e "${grey}(N'oubliez pas le mot de passe ! Je l'ai copié dans le presse-papier)${normal}"
 
 line
 bot "à Bientôt !"
